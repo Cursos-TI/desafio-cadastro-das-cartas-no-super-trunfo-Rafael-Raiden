@@ -6,10 +6,20 @@
 // Siga os comentários para implementar cada parte do desafio.
 //Teste larissa
 
+#define NUM_ESTADOS 8
+#define CIDADES_POR_ESTADO 4
+
 int main() {
     // Sugestão: Defina variáveis separadas para cada atributo da cidade.
     // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
-    
+    char codigo[NUM_ESTADOS][CIDADES_POR_ESTADO][4];
+    int populacao[NUM_ESTADOS][CIDADES_POR_ESTADO];
+    float area[NUM_ESTADOS][CIDADES_POR_ESTADO];
+    float pib[NUM_ESTADOS][CIDADES_POR_ESTADO];
+    int pontos_turisticos[NUM_ESTADOS][CIDADES_POR_ESTADO];
+
+    printf("Bem-vindo ao cadastro de cidades do Super Truno! \n");
+
     // Cadastro das Cartas:
     // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
     // Solicite ao usuário que insira as informações de cada cidade, como o código, nome, população, área, etc.
