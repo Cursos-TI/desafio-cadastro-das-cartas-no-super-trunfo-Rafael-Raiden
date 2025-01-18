@@ -24,80 +24,41 @@ int main() {
     // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
     // Solicite ao usuário que insira as informações de cada cidade, como o código, nome, população, área, etc.
 
-    // Estado A
-    sprintf(codigo[0][0], "A01");
-    printf("Cadastrando a cidade %s:\n", codigo[0][0]);
-    printf("  População: ");
-    scanf("%d", &populacao[0][0]);
-    printf("  Área (km²): ");
-    scanf("%f", &area[0][0]);
-    printf("  PIB (em bilhões): ");
-    scanf("%f", &pib[0][0]);
-    printf("  Número de pontos turísticos: ");
-    scanf("%d", &pontos_turisticos[0][0]);
+// Cadastro das cidades
+    for (int i = 0; i < NUM_ESTADOS; i++) {
+        for (int j = 0; j < CIDADES_POR_ESTADO; j++) {
+            // Gerar o código da cidade
+            char estado = 'A' + i; // Letras de A a H
+            sprintf(codigo[i][j], "%c%02d", estado, j + 1);
 
-    sprintf(codigo[0][1], "A02");
-    printf("Cadastrando a cidade %s:\n", codigo[0][1]);
-    printf("  População: ");
-    scanf("%d", &populacao[0][1]);
-    printf("  Área (km²): ");
-    scanf("%f", &area[0][1]);
-    printf("  PIB (em bilhões): ");
-    scanf("%f", &pib[0][1]);
-    printf("  Número de pontos turísticos: ");
-    scanf("%d", &pontos_turisticos[0][1]);
+            // Solicitar informações ao usuário
+            printf("Cadastrando a cidade %s:\n", codigo[i][j]);
+            printf("  População: ");
+            scanf("%d", &populacao[i][j]);
+            printf("  Área (km²): ");
+            scanf("%f", &area[i][j]);
+            printf("  PIB (em bilhões): ");
+            scanf("%f", &pib[i][j]);
+            printf("  Número de pontos turísticos: ");
+            scanf("%d", &pontos_turisticos[i][j]);
+            printf("\n");
+        }
+    }
 
-    sprintf(codigo[0][2], "A03");
-    printf("Cadastrando a cidade %s:\n", codigo[0][2]);
-    printf("  População: ");
-    scanf("%d", &populacao[0][2]);
-    printf("  Área (km²): ");
-    scanf("%f", &area[0][2]);
-    printf("  PIB (em bilhões): ");
-    scanf("%f", &pib[0][2]);
-    printf("  Número de pontos turísticos: ");
-    scanf("%d", &pontos_turisticos[0][2]);
-
-    sprintf(codigo[0][3], "A04");
-    printf("Cadastrando a cidade %s:\n", codigo[0][3]);
-    printf("  População: ");
-    scanf("%d", &populacao[0][3]);
-    printf("  Área (km²): ");
-    scanf("%f", &area[0][3]);
-    printf("  PIB (em bilhões): ");
-    scanf("%f", &pib[0][3]);
-    printf("  Número de pontos turísticos: ");
-    scanf("%d", &pontos_turisticos[0][3]);
-
-    // Exibição dos Dados das Cartas:
     // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
     // Exiba os valores inseridos para cada atributo da cidade, um por linha.
 
     printf("\nDados cadastrados:\n\n");
+    for (int i = 0; i < NUM_ESTADOS; i++) {
+        for (int j = 0; j < CIDADES_POR_ESTADO; j++) {
+            printf("Cidade %s:\n", codigo[i][j]);
+            printf("  População: %d habitantes\n", populacao[i][j]);
+            printf("  Área: %.2f km²\n", area[i][j]);
+            printf("  PIB: %.2f bilhões\n", pib[i][j]);
+            printf("  Pontos Turísticos: %d\n", pontos_turisticos[i][j]);
+            printf("\n");
+        }
 
-    printf("Cidade %s:\n", codigo[0][0]);
-    printf("  População: %d habitantes\n", populacao[0][0]);
-    printf("  Área: %.2f km²\n", area[0][0]);
-    printf("  PIB: %.2f bilhões\n", pib[0][0]);
-    printf("  Pontos Turísticos: %d\n", pontos_turisticos[0][0]);
-
-    printf("Cidade %s:\n", codigo[0][1]);
-    printf("  População: %d habitantes\n", populacao[0][1]);
-    printf("  Área: %.2f km²\n", area[0][1]);
-    printf("  PIB: %.2f bilhões\n", pib[0][1]);
-    printf("  Pontos Turísticos: %d\n", pontos_turisticos[0][1]);
-
-    printf("Cidade %s:\n", codigo[0][2]);
-    printf("  População: %d habitantes\n", populacao[0][2]);
-    printf("  Área: %.2f km²\n", area[0][2]);
-    printf("  PIB: %.2f bilhões\n", pib[0][2]);
-    printf("  Pontos Turísticos: %d\n", pontos_turisticos[0][2]);
-
-    printf("Cidade %s:\n", codigo[0][3]);
-    printf("  População: %d habitantes\n", populacao[0][3]);
-    printf("  Área: %.2f km²\n", area[0][3]);
-    printf("  PIB: %.2f bilhões\n", pib[0][3]);
-    printf("  Pontos Turísticos: %d\n", pontos_turisticos[0][3]);
 
 
     return 0;
